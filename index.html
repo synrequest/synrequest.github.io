@@ -77,6 +77,11 @@
         <a href="https://www.roblox.com/" class="btn">Roblox</a>
     </div>
 
+    <audio autoplay loop>
+        <source src="bgm.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script>
         particlesJS("particles-js", {
@@ -187,6 +192,15 @@
             },
             "retina_detect": true
         });
+
+        document.addEventListener("DOMContentLoaded", function(event) {
+            var audio = document.querySelector("audio");
+            audio.play();
+        });
+    </script>
+</body>
+</html>
+
     </script>
 </body>
 </html>
