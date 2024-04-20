@@ -70,6 +70,33 @@
                 left: 20px;
             }
         }
+
+        /* Add styles for the profile image */
+        .profile-image {
+            position: absolute;
+            top: 20px;
+            right: -100px; /* Initially positioned outside the viewport */
+            opacity: 0; /* Initially hidden */
+            animation: fadeInRight 2s ease forwards, riseUp 2s ease forwards;
+        }
+
+        @keyframes fadeInRight {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        @keyframes riseUp {
+            0% {
+                transform: translateY(100px); /* Move the image down */
+            }
+            100% {
+                transform: translateY(0); /* Move the image up */
+            }
+        }
     </style>
 </head>
 <body>
@@ -80,6 +107,9 @@
         <h2>Also known as Syn.Request or Zenith<br>Roblox Developer<br>Discord ID: 930621561294184462</h2>
         <a href="https://www.roblox.com/users/2999823086/profile" class="btn">Roblox</a>
     </div>
+
+    <!-- Add the profile image -->
+    <img src="profile.png" alt="Profile Image" class="profile-image">
 
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script>
