@@ -10,10 +10,7 @@
             margin: 0;
             font-family: 'Source Sans Pro', sans-serif;
             overflow: hidden;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
+            position: relative;
         }
         #particles-js {
             position: fixed;
@@ -26,18 +23,25 @@
             z-index: -1;
         }
         #content {
-            text-align: center;
+            text-align: left;
             color: #fff;
             opacity: 0;
-            animation: fadeInSlideDown 2s ease forwards;
+            animation: slideInLeft 2s ease forwards;
+            position: absolute;
+            top: 20px;
+            left: 20px;
+        }
+        h1, h2 {
+            margin: 0;
+            padding: 0;
         }
         h1 {
-            font-size: 48px;
-            margin-bottom: 10px;
+            font-size: 120px;
             font-weight: 700;
+            margin-bottom: 10px;
         }
         h2 {
-            font-size: 24px;
+            font-size: 36px;
             font-weight: 400;
             margin-bottom: 20px;
         }
@@ -56,14 +60,14 @@
             transform: scale(1.1);
         }
 
-        @keyframes fadeInSlideDown {
+        @keyframes slideInLeft {
             0% {
                 opacity: 0;
-                transform: translateY(-20%);
+                left: -100%;
             }
             100% {
                 opacity: 1;
-                transform: translateY(0);
+                left: 20px;
             }
         }
     </style>
@@ -72,14 +76,9 @@
     <div id="particles-js"></div>
     <div id="content">
         <h1>syn.request</h1>
-        <h2>13<br>Roblox Developer<br>130k+ Robux Earnings</h2>
+        <h2>13<br>Roblox Developer<br>Discord ID: 930621561294184462</h2>
         <a href="https://www.roblox.com/users/2999823086/profile" class="btn">Roblox</a>
     </div>
-
-    <audio autoplay loop>
-        <source src="bgm.mp3" type="audio/mpeg">
-        Your browser does not support the audio element.
-    </audio>
 
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script>
@@ -191,15 +190,6 @@
             },
             "retina_detect": true
         });
-
-        document.addEventListener("DOMContentLoaded", function(event) {
-            var audio = document.querySelector("audio");
-            audio.play();
-        });
-    </script>
-</body>
-</html>
-
     </script>
 </body>
 </html>
