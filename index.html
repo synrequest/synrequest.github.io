@@ -102,32 +102,4 @@
         <h1>synrequest</h1>
         <h2>Computer Science Student</h2>
         <h2>Roblox Developer</h2>
-    </div>
-    <div id="video-container">
-        <button id="left-btn" onclick="changeVideo(-1)">Left</button>
-        <div id="video-placeholder"></div>
-        <button id="right-btn" onclick="changeVideo(1)">Right</button>
-    </div>
-
-    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-    <script>
-        const videoContainer = document.getElementById('video-placeholder');
-        const leftButton = document.getElementById('left-btn');
-        const rightButton = document.getElementById('right-btn');
-        let currentVideo = 1;
-
-        function changeVideo(direction) {
-            currentVideo += direction;
-            if (currentVideo < 1) {
-                currentVideo = 4;
-            } else if (currentVideo > 4) {
-                currentVideo = 1;
-            }
-            videoContainer.innerHTML = `<video width="400" height="300" controls autoplay loop>
-                <source src="${currentVideo}.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>`;
-        }
-    </script>
-</body>
 </html>
