@@ -59,6 +59,30 @@
         .btn:hover {
             transform: scale(1.1);
         }
+        #video-container {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #video-placeholder {
+            width: 400px;
+            height: 300px;
+            background-color: #222;
+            margin: 0 10px;
+        }
+        #left-btn, #right-btn {
+            font-size: 24px;
+            padding: 10px 20px;
+            background-color: #333;
+            border: none;
+            color: #fff;
+            border-radius: 5px;
+            cursor: pointer;
+        }
 
         @keyframes slideInLeft {
             0% {
@@ -76,119 +100,34 @@
     <div id="particles-js"></div>
     <div id="content">
         <h1>synrequest</h1>
-        <h2>Computer Science Student
-        <h2>Roblox Developer
+        <h2>Computer Science Student</h2>
+        <h2>Roblox Developer</h2>
+    </div>
+    <div id="video-container">
+        <button id="left-btn" onclick="changeVideo(-1)">Left</button>
+        <div id="video-placeholder"></div>
+        <button id="right-btn" onclick="changeVideo(1)">Right</button>
+    </div>
 
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script>
-        particlesJS("particles-js", {
-            "particles": {
-                "number": {
-                    "value": 80,
-                    "density": {
-                        "enable": true,
-                        "value_area": 800
-                    }
-                },
-                "color": {
-                    "value": "#ffffff"
-                },
-                "shape": {
-                    "type": "circle",
-                    "stroke": {
-                        "width": 0,
-                        "color": "#000000"
-                    },
-                    "polygon": {
-                        "nb_sides": 5
-                    },
-                    "image": {
-                        "src": "img/github.svg",
-                        "width": 100,
-                        "height": 100
-                    }
-                },
-                "opacity": {
-                    "value": 0.5,
-                    "random": false,
-                    "anim": {
-                        "enable": false,
-                        "speed": 1,
-                        "opacity_min": 0.1,
-                        "sync": false
-                    }
-                },
-                "size": {
-                    "value": 3,
-                    "random": true,
-                    "anim": {
-                        "enable": false,
-                        "speed": 40,
-                        "size_min": 0.1,
-                        "sync": false
-                    }
-                },
-                "line_linked": {
-                    "enable": true,
-                    "distance": 150,
-                    "color": "#ffffff",
-                    "opacity": 0.4,
-                    "width": 1
-                },
-                "move": {
-                    "enable": true,
-                    "speed": 6,
-                    "direction": "none",
-                    "random": false,
-                    "straight": false,
-                    "out_mode": "out",
-                    "bounce": false,
-                    "attract": {
-                        "enable": false,
-                        "rotateX": 600,
-                        "rotateY": 1200
-                    }
-                }
-            },
-            "interactivity": {
-                "detect_on": "canvas",
-                "events": {
-                    "onhover": {
-                        "enable": false
-                    },
-                    "onclick": {
-                        "enable": false
-                    },
-                    "resize": true
-                },
-                "modes": {
-                    "grab": {
-                        "distance": 400,
-                        "line_linked": {
-                            "opacity": 1
-                        }
-                    },
-                    "bubble": {
-                        "distance": 400,
-                        "size": 40,
-                        "duration": 2,
-                        "opacity": 8,
-                        "speed": 3
-                    },
-                    "repulse": {
-                        "distance": 200,
-                        "duration": 0.4
-                    },
-                    "push": {
-                        "particles_nb": 4
-                    },
-                    "remove": {
-                        "particles_nb": 2
-                    }
-                }
-            },
-            "retina_detect": true
-        });
+        const videoContainer = document.getElementById('video-placeholder');
+        const leftButton = document.getElementById('left-btn');
+        const rightButton = document.getElementById('right-btn');
+        let currentVideo = 1;
+
+        function changeVideo(direction) {
+            currentVideo += direction;
+            if (currentVideo < 1) {
+                currentVideo = 4;
+            } else if (currentVideo > 4) {
+                currentVideo = 1;
+            }
+            videoContainer.innerHTML = `<video width="400" height="300" controls autoplay loop>
+                <source src="${currentVideo}.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>`;
+        }
     </script>
 </body>
 </html>
