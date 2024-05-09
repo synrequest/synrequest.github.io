@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Source Code</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@700&display=swap">
+    <style>
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background-color: #0f0f0f;
+            color: #fff;
+            padding: 20px;
+            margin: 0;
+        }
+
+        h1 {
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            max-width: 800px;
+        }
+
+        .card {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+            width: 250px;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .title {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        button {
+            padding: 15px 30px;
+            font-size: 18px;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 5px;
+            background-color: rgba(255, 255, 255, 0.3);
+            border-radius: 5px;
+        }
+
+        button:hover {
+            padding: 20px 35px;
+            background-color: rgba(255, 255, 255, 0.5);
+        }
+
+        .image {
+            width: 100px;
+            height: auto;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Source Code Files</h1>
+
+<div class="container">
+    <div class="card">
+        <h2 class="title">Delexory Untitled Shooter</h2>
+        <img src="sourcecode/delexory_untitled_shooter.png" alt="Delexory Untitled Shooter Image" class="image">
+        <button onclick="downloadFile('delexory_untitled_shooter')">Download</button>
+    </div>
+
+    <div class="card">
+        <h2 class="title">Criminality (BANNABLE)</h2>
+        <img src="sourcecode/criminality_no_bypass.png" alt="Criminality (No Bypass) Image" class="image">
+        <button onclick="downloadFile('criminality_no_bypass')">Download</button>
+    </div>
+
+    <div class="card">
+        <h2 class="title">Criminality 2.0.5</h2>
+        <img src="sourcecode/criminality.png" alt="Criminality Image" class="image">
+        <button onclick="downloadFile('criminality')">Download</button>
+    </div>
+
+    <div class="card">
+        <h2 class="title">Blackout [PENDING]</h2>
+        <img src="sourcecode/Blackout.png" alt="Blackout Image" class="image">
+    </div>
+
+    <div class="card">
+        <h2 class="title">Aethelbeorn</h2>
+        <img src="sourcecode/Placeholder.png" alt="Aethelbeorn Image" class="image">
+        <button onclick="downloadFile('Aethelbeorn')">Download</button>
+    </div>
+</div>
+
+<script>
+    function downloadFile(filename) {
+        if (filename === 'criminality') {
+            var link = document.createElement('a');
+            link.setAttribute('href', 'sourcecode/criminality.rbxl');
+            link.setAttribute('download', 'criminality.rbxl');
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        } else if (filename === 'criminality_no_bypass') {
+            var link = document.createElement('a');
+            link.setAttribute('href', 'sourcecode/criminality_no_bypass.rbxl');
+            link.setAttribute('download', 'criminality_no_bypass.rbxl');
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        } else if (filename === 'delexory_untitled_shooter') {
+            var link = document.createElement('a');
+            link.setAttribute('href', 'sourcecode/delexory_untitled_shooter.rbxl');
+            link.setAttribute('download', 'delexory_untitled_shooter.rbxl');
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        } else if (filename === 'Aethelbeorn') {
+            var link = document.createElement('a');
+            link.setAttribute('href', 'sourcecode/aethel.rbxl');
+            link.setAttribute('download', 'aethel.rbxl');
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        } else {
+            alert('Downloading ' + filename + ' file...');
+        }
+    }
+</script>
+
+</body>
+</html>
+
