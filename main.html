@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>The Studio Archive</title>
+  <meta name="description" content="The Studio Archive - WE UP!">
+  <meta name="author" content="archive" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <!-- Add Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@700&display=swap" rel="stylesheet">
+  <!-- Add Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <!-- Add your custom styles here -->
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Open Sans', sans-serif;
+      background-color: #0f0f0f; /* Dark gray background color */
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+
+    h1 {
+      color: #ffffff; /* White title color */
+      font-size: 3rem; /* Bigger title */
+      margin-bottom: 20px;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 20px;
+    }
+
+    .button {
+      padding: 15px 30px; /* Increase button padding */
+      background-color: #444444; /* Lighter gray button color */
+      color: #ffffff; /* White button text color */
+      font-size: 1.2rem; /* Increase button text size */
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+
+    .button:hover {
+      background-color: #666666; /* Darker gray on hover */
+      transform: scale(1.05); /* Scale button up on hover */
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h1>The Studio Archive</h1>
+
+  <div class="buttons">
+    <button class="button" onclick="window.location.href='decompiled.html'">Decompiled [WIP]</button>
+    <button class="button" onclick="window.location.href='sourcecode.html'">Source Code</button>
+  </div>
+</div>
+
+</body>
+</html>
