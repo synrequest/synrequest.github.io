@@ -1,0 +1,109 @@
+body {
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: #2c3e50;
+    margin: 0;
+    color: white;
+}
+
+.blackjack-container {
+    background: #34495e;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    color: white;
+    width: 80%;
+    max-width: 800px;
+}
+
+.hand {
+    margin-bottom: 20px;
+}
+
+.hand h2 {
+    margin: 10px 0;
+    font-size: 24px;
+}
+
+.dealer-hand, .player-hand {
+    display: flex;
+    justify-content: center;
+    margin: 10px 0;
+}
+
+.card {
+    width: 80px;
+    height: 120px;
+    border: 1px solid #ecf0f1;
+    border-radius: 5px;
+    background: #ecf0f1;
+    color: black;
+    margin: 0 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 32px;
+    transition: transform 0.2s ease-in-out;
+}
+
+.card.slide-right {
+    animation: slide-right 1.5s forwards; /* Adjusted animation duration */
+}
+
+.card.flip {
+    animation: flip 0.5s forwards;
+}
+
+@keyframes slide-right {
+    from {
+        transform: translateX(-100vw);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes flip {
+    from {
+        transform: rotateY(180deg);
+        opacity: 0;
+    }
+    to {
+        transform: rotateY(0);
+        opacity: 1;
+    }
+}
+
+.actions button {
+    margin: 5px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background: #e74c3c;
+    color: white;
+    cursor: pointer;
+    font-size: 18px;
+    transition: background 0.3s, transform 0.3s; /* Added transition for transform */
+}
+
+.actions button:hover {
+    background: #c0392b;
+    transform: scale(1.1); /* Added scale transform on hover */
+}
+
+.tips {
+    margin-top: 20px;
+}
+
+.result {
+    margin-top: 20px;
+    font-size: 24px;
+    font-weight: bold;
+    transition: opacity 0.5s ease-in-out;
+}
